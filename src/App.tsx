@@ -9,7 +9,12 @@ const App = () => {
       </AppStyles.Header>
 
       <AppStyles.Body>
-        ...
+        {/* Area de informações */}
+
+        {/* Area de inserção */}
+
+        {/* abeça de otems */}
+        
       </AppStyles.Body>
 
     </AppStyles.Container>
