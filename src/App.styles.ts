@@ -12,11 +12,11 @@ export const HeaderText = styled.h1`
     margin: 0;
     padding: 0;
     color: #fff;
-    padding-top: 30px;
+    padding-top: 1.875rem;
 `;
 
 export const Body = styled.div`
     margin: auto;
     max-width: 980px;
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
 `;
