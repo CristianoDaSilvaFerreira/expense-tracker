@@ -1,6 +1,12 @@
+import { Item } from '../../types/Item';
 import * as TableStyles from './styles';
 
-function TableArea() {
+
+type Props = {
+  list: Item[];
+}
+
+export const TableArea = ({ list }: Props) => {
   return (
     <TableStyles.Table>
       <thead>
@@ -8,12 +14,15 @@ function TableArea() {
           <TableStyles.TableHeadColumn width={100}>
             Data
           </TableStyles.TableHeadColumn>
+
           <TableStyles.TableHeadColumn width={130}>
             Categoria
           </TableStyles.TableHeadColumn>
+
           <TableStyles.TableHeadColumn>
             Título
           </TableStyles.TableHeadColumn>
+
           <TableStyles.TableHeadColumn width={150}>
             Valor
           </TableStyles.TableHeadColumn>
@@ -21,10 +30,15 @@ function TableArea() {
       </thead>
 
       <tbody>
-
+        {list.map((item, index) => (
+          <tr key={index}>
+            <td></td>
+            <td></td>
+            <td>{item.title}</td>
+            <td></td>
+          </tr>
+        ))}
       </tbody>
     </TableStyles.Table>
   );
 };
-
-export default TableArea;
