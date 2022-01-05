@@ -11,7 +11,7 @@ export const ResumeItem = ({ title, value, color }: Props) => {
         <ResumeStyles.Container>
             <ResumeStyles.Title>{title}</ResumeStyles.Title>
             <ResumeStyles.Info 
-            color={color}>R$ {value}</ResumeStyles.Info>
+            color={color}>R$ {(value).toFixed(2)}</ResumeStyles.Info>
         </ResumeStyles.Container>
     );
 }

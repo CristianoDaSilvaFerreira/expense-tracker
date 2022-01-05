@@ -26,7 +26,7 @@ export const TableItem = ({ item }: Props) => {
 
             <TableItemStyle.TableColumn>
                 <TableItemStyle.Value color={categories[item.category].expense ? 'red' : '#27ae60'}>
-                    R$ {item.value}
+                    R$ {(item.value).toFixed(2)}
                 </TableItemStyle.Value>
             </TableItemStyle.TableColumn>
         </TableItemStyle.TableLine>

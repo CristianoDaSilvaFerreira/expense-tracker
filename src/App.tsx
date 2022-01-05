@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import * as AppStyles from './App.styles';
 
 import { Item } from './types/Item';
-import { Category } from './types/Category';
+// import { Category } from './types/Category';
 
 import { items } from './data/items'
 import { categories } from './data/categories';
