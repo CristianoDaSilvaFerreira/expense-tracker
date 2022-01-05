@@ -1,6 +1,7 @@
 import { formatDate } from '../../helpers/dateFilter';
 import { Item } from '../../types/Item';
 import * as TableItemStyle from './styles';
+import { categories } from '../../data/categories';
 
 type Props = {
     item: Item;
@@ -14,15 +15,19 @@ export const TableItem = ({ item }: Props) => {
             </TableItemStyle.TableColumn>
 
             <TableItemStyle.TableColumn>
-                {item.category}
+                <TableItemStyle.Category color={categories[item.category].color}>
+                    {categories[item.category].title}
+                </TableItemStyle.Category>
             </TableItemStyle.TableColumn>
 
             <TableItemStyle.TableColumn>
                 {item.title}
             </TableItemStyle.TableColumn>
-            
+
             <TableItemStyle.TableColumn>
-                R$ {item.value}
+                <TableItemStyle.Value color={categories[item.category].expense ? 'red' : '#27ae60'}>
+                    R$ {item.value}
+                </TableItemStyle.Value>
             </TableItemStyle.TableColumn>
         </TableItemStyle.TableLine>
     );
