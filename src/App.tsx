@@ -10,6 +10,7 @@ import { categories } from './data/categories';
 import { getCurrentMonth, filterListByMonth } from './helpers/dateFilter';
 import { TableArea } from './components/TableArea';
 import { InfoArea } from './components/InfoArea';
+import { InputArea } from './components/InputArea';
 
 const App = () => {
 
@@ -43,8 +44,16 @@ const App = () => {
 
   }, [filteredList]);
 
+  // Metodo para observa a mudança de mes
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);
+  }
+
+  // Função para adicionar um novo mês com desepesa
+  const handleAddItem = (item: Item) => {
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
   }
 
   return (
@@ -65,6 +74,7 @@ const App = () => {
         />
 
         {/* Area de inserção */}
+        <InputArea onAdd={handleAddItem} />
 
         {/* Tabela de items */}
         <TableArea list={filteredList} />
