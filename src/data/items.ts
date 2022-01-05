@@ -24,7 +24,7 @@ export const items: Item[] = [
     },
 
     { 
-        date: new Date(2022, 1, 4),
+        date: new Date(2021, 11, 5),
         category: 'salary',
         title: 'Salário ACME',
         value: 6500

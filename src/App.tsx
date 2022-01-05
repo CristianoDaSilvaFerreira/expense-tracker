@@ -16,11 +16,36 @@ const App = () => {
   const [list, setList] = useState(items);
   const [filteredList, setFilteredList] = useState<Item[]>([]);
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
+  const [income, setIncome] = useState(0);
+  const [expense, setExpense] = useState(0);
 
+  // Metodo para filtar a lista
   useEffect(() => {
     setFilteredList( filterListByMonth(list, currentMonth) );
 
   }, [list, currentMonth]);
+
+  // Metodo para realização dos calculos
+  useEffect(() => {
+    let incomeCount = 0;
+    let expenseCount = 0;
+
+    for (let i in filteredList) {
+      if (categories[filteredList[i].category].expense) {
+        expenseCount += filteredList[i].value;
+      } else {
+        incomeCount += filteredList[i].value;
+      }
+    }
+
+    setIncome(incomeCount);
+    setExpense(expenseCount);
+
+  }, [filteredList]);
+
+  const handleMonthChange = (newMonth: string) => {
+    setCurrentMonth(newMonth);
+  }
 
   return (
     <AppStyles.Container>
@@ -31,7 +56,13 @@ const App = () => {
 
       <AppStyles.Body>
         {/* Area de informações */}
-        <InfoArea currentMonth={currentMonth} />
+        <InfoArea         
+          currentMonth={currentMonth}
+          onMontChange={handleMonthChange} 
+          income={income}
+          expense={expense}
+        
+        />
 
         {/* Area de inserção */}
 

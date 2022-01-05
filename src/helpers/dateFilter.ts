@@ -35,7 +35,7 @@ export const formatCurrentMonth = (currentMonth: string): string => {
     let [year, month] = currentMonth.split('-');
     let months = [
         'Janeiro',
-        'Fereiro',
+        'Fevereiro',
         'Março',
         'Abril',
         'Maio',
